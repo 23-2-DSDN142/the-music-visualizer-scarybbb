@@ -11,7 +11,7 @@ let songButton;
 let editorMode = true;          // false when in song mode
 let songLoadStatus = "loading"; // "error", "loaded"
 let song;
-let songIsPlaying = false;
+let songIsPlaying = true;
 let songEpoch = 0;              // millis when song starts
 let table;
 let words;
