@@ -1,4 +1,4 @@
-let words_history = [];
+//let words_history = [];
 let vocal_history = [];
 let drum_history = [];
 let bass_history = [];
@@ -14,22 +14,22 @@ function draw_history_line(history) {
   endShape();
 }
 
-function draw_history_words(history) {
-  let last_words = history[0];
-  let text_y = height/8;
-  for(let i=0; i<history.length; i++) {
-    let x = i*4;
-    let cur_words = history[i];
-    if(cur_words != last_words) {
-      push();
-      translate(x, text_y);
-      rotate(-30);
-      text(cur_words, 0, 0);
-      pop();
-      last_words = cur_words;
-    }
-  }
-}
+//function draw_history_words(history) {
+ // let last_words = history[0];
+ // let text_y = height/8;
+ // for(let i=0; i<history.length; i++) {
+ //   let x = i*4;
+ //   let cur_words = history[i];
+ //   if(cur_words != last_words) {
+  //    push();
+  //    translate(x, text_y);
+   //   rotate(-30);
+   //   text(cur_words, 0, 0);
+    //  pop();
+     // last_words = cur_words;
+   // }
+  //}
+//}
 
 function add_to_history(history, d) {
   history.push(d);
@@ -41,7 +41,7 @@ function add_to_history(history, d) {
 function draw_one_frame(words, vocal, drum, bass, other,counter) {
   background(20);
 
-  add_to_history(words_history, words);
+  //add_to_history(words_history, words);
   add_to_history(vocal_history, vocal);
   add_to_history(drum_history, drum);
   add_to_history(bass_history, bass);
@@ -69,9 +69,9 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
   textSize(25);
 
   // big yellow words on top
-  noStroke();
-  fill(255, 255, 0);
-  draw_history_words(words_history);    
+ // noStroke();
+ // fill(255, 255, 0);
+  //draw_history_words(words_history);    
 }
 
 function reset_music() {

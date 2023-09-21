@@ -18,10 +18,12 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    text("vocals", bar_pos_x, height / 2 + 1 * bar_spacing + 8);
  
    // drum bar is green
-   fill(0, 200, 0);
-   rect(bar_pos_x, height / 2 + 2 * bar_spacing, 4 * drum, bar_height);
-   fill(0);
-   text("drums", bar_pos_x, height / 2 + 2 * bar_spacing + 8);
+   fill(252, 3, 148)
+   var ballSize = 50
+
+   var drumHeight = map(drum, 50 , 100 , height, 0+ballSize/2)
+
+   ellipse(width/2,drumHeight, ballSize)
  
    // bass bar is blue
    fill(50, 50, 240);
@@ -38,6 +40,6 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
  
    // display "words"
    textAlign(CENTER);
-   textSize(vocal);
-   text(words, width/2, height/3);
+   //textSize(vocal);
+   //text(words, width/2, height/3);
 }

@@ -64,8 +64,8 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
     bar_width4 = width/5;
   }
 
-  fill(200, 200, 0);
-  text(words, width/2, height/3);
+  //fill(200, 200, 0);
+ // text(words, width/2, height/3);
 
   // vocal bar is red
   fill(200, 0, 0);
