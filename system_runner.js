@@ -172,7 +172,7 @@ function draw() {
           textAlign(CENTER, CENTER);
           text(intSecs, width/2, height/2);
         }
-        // text("Song starting in: " + secondsRemaining, width/2, height/2)      
+            
       }
       else if (!songIsPlaying) {
         song.play();

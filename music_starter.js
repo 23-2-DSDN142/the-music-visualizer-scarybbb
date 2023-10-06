@@ -6,24 +6,37 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   rectMode(CENTER)
   textSize(24);
 
-  let waveHeight= baseWave ;
-  let waveFreq = 2
-  
+  colorMode(HSL, 0 , 0 ,255);
+
+   let pinkColour = color 	(315, 100, 82)
+   let purpleColour = color (277, 65, 19)
+
    let bar_spacing = height / 10;
    let bar_height = width / 12;
    let bar_pos_x = width / 2;
 
-  
+
    
-  map(colorMode(HSL), song.currentTime(0), song.currentTime(150),song.currentTime(150), song.currentTime(206))
+  let saturation = map(song.currentTime(), 151, song.duration(206), 0, 255);
+
+  fill(30, saturation, 255)
+  
+  for ( let i = 0; i < 1080; i++){
+   let gradientAmount = map(i, 0, 1080, 0, 1)
+   let strokeColour = lerpColor(pinkColour , purpleColour , gradientAmount)
+
+   stroke(strokeColour)
+   line(0, 100+i, width, 100+i)
+}
+
    // vocal bar is red
   //  fill(200, 0, 0);
   //  rect(bar_pos_x, height / 2 + 1 * bar_spacing, 4 * vocal, bar_height);
   //  fill(0);
   //  text("vocals", bar_pos_x, height / 2 + 1 * bar_spacing + 8);
  
-  //  // drum bar is green
-  //  fill(252, 3, 148)
+  //  // drum bar 
+  //  fill(325, 98, 50)
   //  var ballSize = 50
 
   //  var drumHeight = map(drum, 50 , 100 , height, 0+ballSize/2)
@@ -31,26 +44,20 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   //  ellipse(width/2,drumHeight, ballSize)
  
    // bass bar 
-   fill(40, 92, 82);
+   stroke(180, 100, 70);
+   noFill()
 
-  let baseWave = map(bass, 0, 100, 20, 100)
+ let bassHeight = height / 2;
+ let bassWave = map (bass, 0, 100, 20, 100)
+ let waveHeight = bassWave;
+ let waveFreq=2;
 
    beginShape()
-   for( let i= 0; i <width; i++ ){
-      vertex(i, bassHeight/2, -waveHeight*sin(waveFreq*i))
+   for( let ii= 0; ii <width; ii++ ){
+      vertex(ii, bassHeight - waveHeight *sin(waveFreq*ii))
    }
    endShape()
 
 
-   // other bar is white
-  //  fill(200, 200, 200);
-  //  rect(bar_pos_x, height / 2 + 4 * bar_spacing, 4 * other, bar_height);
-  //  fill(0);
-  //  text("other", bar_pos_x, height / 2 + 4 * bar_spacing + 8);
-  //  fill(255, 255, 0);
- 
-  //  // display "words"
-  //  textAlign(CENTER);
-   //textSize(vocal);
-   //text(words, width/2, height/3);
+  
 }

@@ -37,23 +37,5 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
   fill(229,119,30); // darker orange
   ellipse(width/2, ovalPlace, ovalSize);
 
- // if(words == "") {
-   // last_words_opacity = last_words_opacity * 0.95;
-   // words = last_words;
- // }
- // else {
-  //  last_words_opacity = (1 + last_words_opacity) * 1.1;
-  //  if(last_words_opacity > 255) {
-  //    last_words_opacity = 255;
-  //  }
- // }
- // last_words = words;
 
-  //textFont('Georgia');
-  //textAlign(CENTER);
-  //textStyle(BOLD);
-  //textSize(80);
-  //noStroke();
-  //fill(0, 0, 0, int(last_words_opacity));
-  //text(words, width/2, height/2);
 }
