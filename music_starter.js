@@ -30,18 +30,28 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 }
 
    // vocal bar is red
-  //  fill(200, 0, 0);
-  //  rect(bar_pos_x, height / 2 + 1 * bar_spacing, 4 * vocal, bar_height);
-  //  fill(0);
-  //  text("vocals", bar_pos_x, height / 2 + 1 * bar_spacing + 8);
+   stroke(180, 100, 70);
+   noFill()
+
+ let vocalHeight = height / 2;
+ let vocalWave = map (vocal, 5, 100, 20, 100)
+ let vocalwHeight = vocalWave;
+ let vocalwFreq=2;
+
+   beginShape()
+   for( let iii= 0; iii <width; iii++ ){
+      vertex(iii, vocalHeight - vocalwHeight *sin(vocalwFreq*iii))
+   }
+   endShape()
+
+
+  
  
-  //  // drum bar 
-  //  fill(325, 98, 50)
-  //  var ballSize = 50
-
-  //  var drumHeight = map(drum, 50 , 100 , height, 0+ballSize/2)
-
-  //  ellipse(width/2,drumHeight, ballSize)
+    // drum bar 
+    fill(325, 98, 50)
+    if (drum > 50) {
+      ellipse(50,50,50)
+  }
  
    // bass bar 
    stroke(180, 100, 70);
