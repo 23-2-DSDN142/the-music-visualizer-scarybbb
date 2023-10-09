@@ -30,7 +30,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 }
 
    // vocal bar is red
-   stroke(180, 100, 70);
+   stroke(255);
    noFill()
 
  let vocalHeight = height / 2;
@@ -48,16 +48,16 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   
  
     // drum bar 
-    fill(325, 98, 50)
+    fill(255)
     if (drum > 50) {
       ellipse(50,50,50)
   }
  
    // bass bar 
-   stroke(180, 100, 70);
+   stroke(255);
    noFill()
 
- let bassHeight = height / 2;
+ let bassHeight = height / 5;
  let bassWave = map (bass, 0, 100, 20, 100)
  let waveHeight = bassWave;
  let waveFreq=2;
