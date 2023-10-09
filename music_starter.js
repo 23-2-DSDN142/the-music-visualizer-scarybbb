@@ -6,7 +6,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   rectMode(CENTER)
   textSize(24);
 
-  colorMode(HSL, 0 , 0 ,255);
+  colorMode(HSL, 255 , 255 ,255);
 
    let pinkColour = color 	(315, 100, 82)
    let purpleColour = color (277, 65, 19)
@@ -17,7 +17,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
    
-  let saturation = map(song.currentTime(), 151, song.duration(206), 0, 255);
+  let saturation = map(song.currentTime(), 151, 206, 0, 255);
 
   fill(30, saturation, 255)
   
