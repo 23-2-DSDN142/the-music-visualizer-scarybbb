@@ -15,36 +15,47 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
    let pinkColour = color 	(315, 100 * saturation, 82)
    let purpleColour = color (277, 65* saturation, 19)
+   let vocalColour = color (180, 222* saturation, 191)
+   let drumColour = color (222, 200* saturation, 180)
+   let bassColour = color (207, 180* saturation, 222)
+
 
   //background
-  for ( let i = 0; i < 1080; i++){
-   let gradientAmount = map(i, 0, 1080, 0, 1)
-   let strokeColour = lerpColor(pinkColour , purpleColour , gradientAmount)
+//   for ( let i = 0; i < 1080; i++){
+//    let gradientAmount = map(i, 0, 1080, 0, 1)
+//    let strokeColour = lerpColor(pinkColour , purpleColour , gradientAmount)
 
-   stroke(strokeColour)
-   line(0, 1+i, width, 1+i)
-}
+//    stroke(strokeColour)
+//    line(0, 1+i, width, 1+i)
+// }
+   // other
+
+   for ( let i = 0; i < 1080; i++){
+      let gradientAmount = map(other, 20, 100, 0, 1)
+      let strokeColour = lerpColor(pinkColour , purpleColour , gradientAmount)
+   
+      stroke(strokeColour)
+      line(0, 1+i, width, 1+i)
+   }
 
    // vocal 
-   stroke(255);
+
+   strokeWeight(5)
+   stroke(vocalColour);
    noFill()
 
- let vocalHeight = height / 2;
- let vocalWave = map (vocal, 5, 100, 20, 100)
- let vocalwHeight = vocalWave;
- let vocalwFreq=2;
+   let vocalRadius = map(vocal, 50, 100, 50, 400 )
 
-   beginShape()
-   for( let iii= 0; iii <width; iii++ ){
-      vertex(iii, vocalHeight - vocalwHeight *sin(vocalwFreq*iii))
-   }
-   endShape()
+   ellipse(960, 540, vocalRadius)
 
 
   
  
     // drum 
-    fill(255)
+
+
+    fill(drumColour)
+
     if (drum > 75) {
       
       if (changePosition){
@@ -62,13 +73,15 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    changePosition= true
   }
    // bass  
-   stroke(255);
+
+   strokeWeight(1)
+   stroke(bassColour);
    noFill()
 
- let bassHeight = height / 5;
- let bassWave = map (bass, 0, 100, 20, 100)
+ let bassHeight = height / 1.25;
+ let bassWave = map (bass, 5, 100, 20, 100)
  let waveHeight = bassWave;
- let waveFreq=2;
+ let waveFreq=1;
 
    beginShape()
    for( let ii= 0; ii <width; ii++ ){
@@ -77,5 +90,5 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    endShape()
 
 
-  
+
 }
