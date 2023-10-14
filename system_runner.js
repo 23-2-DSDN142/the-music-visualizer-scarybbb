@@ -3,7 +3,6 @@ const canvasHeight = 1080 ;
 
 
 let mainCanvas;
-
 let textInput;
 let slider1, slider2, slider3, slider4;
 let songButton;
@@ -97,7 +96,7 @@ function setup() {
   volumes[0] = vol1;
   */
   if(smoothing != 0) {
-    let radius = map(smoothing, 0, 100, 0, 3);
+    let radius = map(smoothing, 0, 2, 0, 3);
     for(let i=0; i<4; i++) {
       volumes[i] = Taira.smoothen(volumes[i], Taira.ALGORITHMS.GAUSSIAN, 10, radius, true)
     }
