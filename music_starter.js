@@ -16,18 +16,18 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
   fill(30, saturation, 255)
 
-   let pinkColour = color 	(315, 100 * saturation, 82)
-   let purpleColour = color (277, 65* saturation, 19)
+   let purplebackColour = color 	(271, 39 * saturation, 17)
+   let bluebackColour = color (185, 43* saturation, 44)
    let anotherColour = color (0,255*saturation)
-   let vocalColour = color (180, 222* saturation, 191)
-   let drumColour = color (222, 200* saturation, 180)
-   let bassColour = color (207, 180* saturation, 222)
+   let vocalColour = color  (307, 76* saturation, 93)
+   let drumColour = color  (276, 54* saturation, 75)
+   let bassColour = color (181, 82 * saturation, 87)
 
 
   //background
    for ( let i = 0; i < 1080; i++){
     let gradientAmount = map(i, 0, 1080, 0, 1)
-    let strokeColour = lerpColor(pinkColour , purpleColour , gradientAmount)
+    let strokeColour = lerpColor(purplebackColour , bluebackColour , gradientAmount)
 
    stroke(strokeColour)
    line(0, 1+i, width, 1+i)
@@ -36,7 +36,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
    for ( let i = 0; i < 1080; i++){
       let otherMap = map(other, 20, 100, 0, 1)
-       let otherColour = lerpColor(pinkColour , anotherColour , otherMap)
+       let otherColour = lerpColor(purplebackColour , anotherColour , otherMap)
 
        stroke(otherColour)
        line(0, 1+i, width, 1+i)
@@ -49,22 +49,22 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    stroke(vocalColour);
    noFill()
 
-      if (map(song.currentTime(),113,123,0,255) ){
-        vocalTimer= true
+     // if (map(song.currentTime(),113,123,0,255) ){
+    //    vocalTimer= true
 
-      }
-      else{
-        vocalTimer= false
+   //   }
+    //  else{
+     //   vocalTimer= false
 
-      }
+    //  }
  
 
-      if (vocalTimer= false) {
+      //if (vocalTimer= false) {
 
         let vocalRadius = map(vocal, 30, 150, 160, 500 )
         ellipse(960, 540, vocalRadius)
 
-      }
+     // }
 
 
     // drum 
