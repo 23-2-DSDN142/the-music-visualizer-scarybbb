@@ -23,27 +23,27 @@ clear();
    
     imgRun = false
   }
-  image(flyImg, 500, 500)
 
+  //saturation
   colorMode(HSL, 360 , 100 ,100);
   
-  let saturation = map(song.currentTime(), 1, 151, 0, 206);
-  //let saturation = map(song.currentTime(), 151, 206, 0, 255);
+  //let saturation = map(song.currentTime(), 1, 151, 0, 206);
+  let saturation = map(song.currentTime(), 151, 206, 0, 255);
 
 
   fill(30, saturation, 255)
 
    let purplebackColour = color (271, 39 * saturation, 17)
    let bluebackColour = color (192, 72 * saturation, 17)
-   let clearColour = color (269, 89 * saturation, 6)
-   let vocalColour = color  (307, 76 * saturation, 93)
-   let drumColour = color  (276, 54 * saturation, 75)
+   let darkerpurpleColour = color (269, 89 * saturation, 6)
+   let vocalColour = color  (276, 65 * saturation, 83)
+   let drumColour = color  (264, 35 * saturation, 71)
    let bassColour = color (181, 82 * saturation, 87)
 
 
   //background
   let otherMap = map(other, 1, 1080, 0, 1)
-  let otherColour = lerpColor(clearColour , purplebackColour , otherMap);
+  let otherColour = lerpColor(darkerpurpleColour , purplebackColour , otherMap);
   
   for ( let i = 0; i < 1080; i++){        
     let gradientAmount = map(i, 0, 1080, 0, 1)
@@ -124,7 +124,7 @@ clear();
 
     }
     
-    ellipse(drumCircleX, drumCircleY, 50, 50)
+    ellipse(drumCircleX, drumCircleY, 25, 25)
 }
 else{
   drumPosition2= true
@@ -177,7 +177,7 @@ if (drum > 80 && drum < 90) {
 
   }
   
-  ellipse(drumCircleX, drumCircleY, 50, 50)
+  ellipse(drumCircleX, drumCircleY, 25, 25)
 }
 else{
   drumPosition4= true
@@ -248,7 +248,9 @@ endShape()
    }
    endShape()
 
-
+   //butterfly
+   
+   image(flyImg, 845, 460)
 
 
 
