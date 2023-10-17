@@ -19,14 +19,14 @@ clear();
 
   //image 
   if (imgRun){
-    flyImg = loadImage ('test.png');
+    flyImg = loadImage ('butterfly.png');
    
     imgRun = false
   }
-  image(flyImg, 875, 480)
+  image(flyImg, 500, 500)
 
   colorMode(HSL, 360 , 100 ,100);
-
+  
   let saturation = map(song.currentTime(), 1, 151, 0, 206);
   //let saturation = map(song.currentTime(), 151, 206, 0, 255);
 
@@ -34,21 +34,20 @@ clear();
   fill(30, saturation, 255)
 
    let purplebackColour = color (271, 39 * saturation, 17)
-   let bluebackColour = color (185, 4 * saturation, 44)
-   let clearColour = color (10, 255 * saturation, 44)
+   let bluebackColour = color (192, 72 * saturation, 17)
+   let clearColour = color (269, 89 * saturation, 6)
    let vocalColour = color  (307, 76 * saturation, 93)
    let drumColour = color  (276, 54 * saturation, 75)
    let bassColour = color (181, 82 * saturation, 87)
 
 
   //background
-  let otherMap = map(other, 1, 100, 0, 1)
-  let otherColour = lerpColor(purplebackColour , purplebackColour , otherMap);
+  let otherMap = map(other, 1, 1080, 0, 1)
+  let otherColour = lerpColor(clearColour , purplebackColour , otherMap);
   
   for ( let i = 0; i < 1080; i++){        
     let gradientAmount = map(i, 0, 1080, 0, 1)
-    let strokeColour = lerpColor(otherColour , bluebackColour , gradientAmount)
-    console.log(strokeColour)
+    let strokeColour = lerpColor(otherColour , bluebackColour , gradientAmount)    
     stroke(strokeColour)
     line (0, i, width, i)
     line(0, 1+i, width, 1+i)
