@@ -26,7 +26,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   colorMode(HSL, 360 , 100 ,100);
 
   //colour changer from black and white to colour
-  let saturation = map(song.currentTime(), 151, 206, 0, 255);
+  let saturation = map(song.currentTime(), 151, 206, 0, 255); 
   fill(30, saturation, 255)
 
    let purplebackColour = color (271, 39 * saturation, 17) //upper part of background
